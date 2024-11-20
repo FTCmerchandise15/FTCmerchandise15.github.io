@@ -35,4 +35,42 @@ function displayItems() {
     });
 }
 
+ var itemList = document.getElementById('itemList');
+                itemList.appendChild(newItem);
+
+   <input type="text" id="itemInput" placeholder="Enter an item" />
+    
+    <!-- Button to add the item to the list -->
+    <button onclick="addItem()">Add Item</button>
+
+    <!-- The list where items will be added -->
+    <ul id="itemList">
+        <!-- Items will be dynamically added here -->
+    </ul>
+
+    <script>
+        // Function to add a new item to the list
+        function addItem() {
+            // Get the value from the input field
+            var itemInput = document.getElementById('itemInput');
+            var itemValue = itemInput.value.trim();  // Trim whitespace
+
+            // Check if the input value is not empty
+            if (itemValue !== '') {
+                // Create a new list item (li)
+                var newItem = document.createElement('li');
+                newItem.textContent = itemValue; // Set the text of the new item
+
+                // Add the new item to the list (ul)
+                var itemList = document.getElementById('itemList');
+                itemList.appendChild(newItem);
+
+                // Clear the input field after adding the item
+                itemInput.value = '';
+            } else {
+                // If the input is empty, show an alert
+                alert('Please enter an item.');
+            }
+        }
+    </script>
 
