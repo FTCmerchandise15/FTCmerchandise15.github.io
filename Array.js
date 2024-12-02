@@ -1,76 +1,57 @@
-// Initialize an empty array
-let itemsArray = [];
+let cart = [];
 
-// Function to add item to the array
-function addItem() {
-    // Get the value from the input field
-    const inputField = document.getElementById('itemInput');
-    const newItem = inputField.value.trim();
-
-    // Check if the input is not empty
-    if (newItem !== '') {
-        // Add the new item to the array
-        itemsArray.push(newItem);
-
-        // Update the displayed list of items
-        displayItems();
-
-        // Clear the input field for the next item
-        inputField.value = '';
-    } else {
-        alert('Please enter a valid item!');
-    }
+// Function to add item to cart
+function addToCart(productId, productName, productPrice) {
+    const product = {
+        id: productId,
+        name: productName,
+        price: parseFloat(productPrice)
+    };
+    cart.push(product);
+    updateCartUI();
 }
 
-// Function to display the items in the array
-function displayItems() {
-    const itemsList = document.getElementById('items-list');
-    itemsList.innerHTML = ''; // Clear current list
+// Function to update cart UI
+function updateCartUI() {
+    const cartCount = document.getElementById('cart-count');
+    cartCount.textContent = cart.length;
 
-    // Iterate over the array and create list items for each
-    itemsArray.forEach(item => {
+    const cartItemsList = document.getElementById('cart-items');
+    const totalPriceElem = document.getElementById('total-price');
+
+    // Clear current cart items
+    cartItemsList.innerHTML = '';
+
+    let total = 0;
+    cart.forEach(item => {
         const li = document.createElement('li');
-        li.textContent = item;
-        itemsList.appendChild(li);
+        li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+        cartItemsList.appendChild(li);
+        total += item.price;
     });
+
+    totalPriceElem.textContent = total.toFixed(2);
 }
 
- var itemList = document.getElementById('itemList');
-                itemList.appendChild(newItem);
+// Function to checkout (just a simulation)
+function checkout() {
+    alert("Thank you for your purchase!");
+    cart = []; // Clear cart
+    updateCartUI();
+}
 
-   <input type="text" id="itemInput" placeholder="Enter an item" />
-    
-    <!-- Button to add the item to the list -->
-    <button onclick="addItem()">Add Item</button>
+// Adding event listeners to product buttons
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+        const id = this.getAttribute('data-id');
+        const name = this.getAttribute('data-name');
+        const price = this.getAttribute('data-price');
+        addToCart(id, name, price);
+    });
+});
 
-    <!-- The list where items will be added -->
-    <ul id="itemList">
-        <!-- Items will be dynamically added here -->
-    </ul>
-
-    <script>
-        // Function to add a new item to the list
-        function addItem() {
-            // Get the value from the input field
-            var itemInput = document.getElementById('itemInput');
-            var itemValue = itemInput.value.trim();  // Trim whitespace
-
-            // Check if the input value is not empty
-            if (itemValue !== '') {
-                // Create a new list item (li)
-                var newItem = document.createElement('li');
-                newItem.textContent = itemValue; // Set the text of the new item
-
-                // Add the new item to the list (ul)
-                var itemList = document.getElementById('itemList');
-                itemList.appendChild(newItem);
-
-                // Clear the input field after adding the item
-                itemInput.value = '';
-            } else {
-                // If the input is empty, show an alert
-                alert('Please enter an item.');
-            }
-        }
-    </script>
-
+// Function to toggle the cart popup visibility
+function toggleCartPopup() {
+    const popup = document.getElementById('cart-popup');
+    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+}
