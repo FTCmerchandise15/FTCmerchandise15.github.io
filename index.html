@@ -1,213 +1,105 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-</style>
-</head>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="w3-container">
-    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
-      <i class="fa fa-remove"></i>
-    </a>
-    <img src="/w3images/avatar_g2.jpg" style="width:45%;" class="w3-round"><br><br>
-    <h4><b>MERCHANDISE</b></h4>
-    <p class="w3-text-grey">Template by W3.CSS</p>
-  </div>
-  <div class="w3-bar-block">
-    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>Merchandise</a> 
-    
-  <div class="w3-panel w3-large">
- 
-</nav>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
-
-  <!-- Header -->
-  <header id="portfolio">
-    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
-    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-    <div class="w3-container">
-    <h1><b>OUR MERCHANDISE  </b><p></p>
-  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <h1>Cart</h1>
-   <ul id="itemList">
-          <button style="font-size:24px">Cart<i class="fa fa-shopping-cart"></i></button>
-     
-    <div id="items">
-        <ul id="itemList">
-          
-            <!-- New items will be added here -->
-        </ul>
+    <title>Merchandise Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Product Section -->
+    <main>
+        <div class="container">
+            <section id="products">
+                <!-- Varsity Jacket -->
+                <div class="product" id="varsity-jacket">
+                    <img src="varsity-jacket.jpg" alt="Varsity Jacket" class="product-img">
+                    <h3>Varsity Jacket</h3>
+                    <p class="price">$50.00</p>
+                    <button class="add-to-cart" data-id="varsity-jacket" data-name="Varsity Jacket" data-price="50.00">Add to Cart</button>
+                </div>
+
+                <!-- Hat -->
+                <div class="product" id="hat">
+                    <img src="hat.jpg" alt="Hat" class="product-img">
+                    <h3>Hat</h3>
+                    <p class="price">$20.00</p>
+                    <button class="add-to-cart" data-id="hat" data-name="Hat" data-price="20.00">Add to Cart</button>
+                </div>
+
+                <!-- Hoodie -->
+                <div class="product" id="hoodie">
+                    <img src="hoodie.jpg" alt="Hoodie" class="product-img">
+                    <h3>Hoodie</h3>
+                    <p class="price">$40.00</p>
+                    <button class="add-to-cart" data-id="hoodie" data-name="Hoodie" data-price="40.00">Add to Cart</button>
+                </div>
+
+                <!-- Sweatpants -->
+                <div class="product" id="sweatpants">
+                    <img src="sweatpants.jpg" alt="Sweatpants" class="product-img">
+                    <h3>Sweatpants</h3>
+                    <p class="price">$30.00</p>
+                    <button class="add-to-cart" data-id="sweatpants" data-name="Sweatpants" data-price="30.00">Add to Cart</button>
+                </div>
+
+                <!-- Bag -->
+                <div class="product" id="bag">
+                    <img src="bag.jpg" alt="Bag" class="product-img">
+                    <h3>Bag</h3>
+                    <p class="price">$25.00</p>
+                    <button class="add-to-cart" data-id="bag" data-name="Bag" data-price="25.00">Add to Cart</button>
+                </div>
+
+                <!-- Keychain -->
+                <div class="product" id="keychain">
+                    <img src="keychain.jpg" alt="Keychain" class="product-img">
+                    <h3>Keychain</h3>
+                    <p class="price">$5.00</p>
+                    <button class="add-to-cart" data-id="keychain" data-name="Keychain" data-price="5.00">Add to Cart</button>
+                </div>
+
+                <!-- T-Shirt -->
+                <div class="product" id="tshirt">
+                    <img src="tshirt.jpg" alt="T-Shirt" class="product-img">
+                    <h3>T-Shirt</h3>
+                    <p class="price">$15.00</p>
+                    <button class="add-to-cart" data-id="tshirt" data-name="T-Shirt" data-price="15.00">Add to Cart</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Cart Popup -->
+    <div id="cart-popup" class="cart-popup">
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total-price">0.00</span></p>
+        <button onclick="checkout()">Checkout</button>
     </div>
 
-    <script>
-        function addItem() {
-            // Get the input value
-            var itemInput = document.getElementById('itemInput');
-            var itemValue = itemInput.value;
+    <!-- About Us Section -->
+    <footer>
+        <div class="container">
+            <section id="about-us">
+                <h2>About Us</h2>
+                <p>Welcome to our Merchandise Store! We offer a variety of high-quality products to help you express yourself. From comfortable hoodies to stylish varsity jackets, we have something for everyone. Our mission is to provide top-notch merchandise that you can enjoy every day. Thank you for supporting our store!</p>
+            </section>
+        </div>
+    </footer>
 
-            // Check if input is not empty
-            if (itemValue.trim() !== '') {
-                // Create a new list item (li)
-                var newItem = document.createElement('li');
-                newItem.textContent = itemValue;
-
-                // Add the new item to the list
-                var itemList = document.getElementById('itemList');
-                itemList.appendChild(newItem);
-
-                // Clear the input field
-                itemInput.value = '';
-            } else {
-                alert('Please enter an item.');
-            }
-        }
-    </script>
-
-</body>
-</html>
-
-    <div class="w3-section w3-bottombar w3-padding-16">
-      <span class="w3-margin-right">Filter:</span> 
-      <button class="w3-button w3-black">ALL</button>
-      
-    </div>
-    </div>
-  </header>
-  
-  <!-- First Photo Grid-->
-  <div class="w3-row-padding">
-    <div class="w3-third w3-container w3-margin-bottom">
-      <p></p>
-       <center> 
-      <div class="w3-container w3-white">
-        <p><b>Varisty jackets</b></p>
-        <p>Description here.<p></p>
- <button onclick="addItem()">Add Item</button>
-
-      </div>
-    </div>
-    <div class="w3-third w3-container w3-margin-bottom">
-      <p></p>
-       <center>
-      <div class="w3-container w3-white">
-        <p><b>Hats</b></p>
-        <p>Description here.<p></p>
- <button onclick="addItem()">Add Item</button>
-
-      </div>
-    </div>
-    <div class="w3-third w3-container">
-     <p></p>
-       <center> 
-      <div class="w3-container w3-white">
-        <p><b>Hoodies</b></p>
-        <p>Description here.<p></p>
- <button onclick="addItem()">Add Item</button>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Second Photo Grid-->
-  <div class="w3-row-padding">
-    <div class="w3-third w3-container w3-margin-bottom">
-      <p></p>
-      <center> 
-      <div class="w3-container w3-white">
-        <p><b>Bags</b></p>
-        <p>Description here.<p></p>
- <button onclick="addItem()">Add Item</button>
-
-      </div>
-    </div>
-    <div class="w3-third w3-container w3-margin-bottom">
-      <p></p>
-       <center> 
-      <div class="w3-container w3-white">
-        <p><b>keychains</b></p>
-        <p>Description here.<p></p>
- <button onclick="addItem()">Add Item</button>
-      </div>
-    </div>
-    <center> 
-    <div class="w3-third w3-container">
-      <p></p>
-      <div class="w3-container w3-white">
-        <p><b>Sweatpants</b></p>
-        <p>Description here.<p></p>
- <button onclick="addItem()">Add Item</button>
-      </div>
-    </div>
-  </div>
-    <center> 
-    <div class="w3-third w3-container">
-      <p></p>
-      <div class="w3-container w3-light gray">
-        <p><b> </b></p>
-        <p> </p>
-      </div>
-    </div>
-  </div> 
-            <center> 
-    <div class="w3-third w3-container">
-      <p></p>
-      <div class="w3-container w3-white">
-        <p><b>T-Shirts</b></p>
-        <p>Description here<p></p>
-
-      </div>
-    </div>
-  </div>
-                
-      
-  <!-- Images of Me -->
-  <div class="w3-row-padding w3-padding-16" id="about">
-    <div class="w3-col m6">
-    
-    </div>
-    <div class="w3-col m6">
-   
-    </div>
-  </div>
-
- <h1><b><center>N/A</b></h1>
-      
-  <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
-
-<!-- End page content -->
-</div>
-
-<script>
-// Script to open and close sidebar
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-}
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
