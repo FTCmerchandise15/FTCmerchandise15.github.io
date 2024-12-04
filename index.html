@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merchandise Store</title>
+    <title>Luxury Merchandise Store</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Header with Cart -->
     <header>
         <div class="container">
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+                    <li><a href="#" id="cart-button">Cart <span id="cart-count">0</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -82,23 +81,26 @@
         </div>
     </main>
 
-    <!-- Cart Popup -->
-    <div id="cart-popup" class="cart-popup">
+    <!-- Cart Dropdown -->
+    <div id="cart-dropdown" class="cart-dropdown">
         <h3>Your Cart</h3>
-        <ul id="cart-items"></ul>
+        <div id="cart-items"></div>
         <p>Total: $<span id="total-price">0.00</span></p>
-        <button onclick="checkout()">Checkout</button>
+        <button id="checkout-button">Proceed to Checkout</button>
     </div>
 
-    <!-- About Us Section -->
-    <footer>
-        <div class="container">
-            <section id="about-us">
-                <h2>About Us</h2>
-                <p>Welcome to our Merchandise Store! We offer a variety of high-quality products to help you express yourself. From comfortable hoodies to stylish varsity jackets, we have something for everyone. Our mission is to provide top-notch merchandise that you can enjoy every day. Thank you for supporting our store!</p>
-            </section>
-        </div>
-    </footer>
+    <!-- Checkout Form -->
+    <div id="checkout-form" class="checkout-form">
+        <h3>Checkout</h3>
+        <form id="payment-form">
+            <input type="text" id="name" placeholder="Your Name" required />
+            <input type="text" id="address" placeholder="Shipping Address" required />
+            <input type="text" id="card-number" placeholder="Card Number" required />
+            <input type="text" id="expiration-date" placeholder="Expiration Date" required />
+            <input type="text" id="cvv" placeholder="CVV" required />
+            <button type="submit">Complete Purchase</button>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 </body>
